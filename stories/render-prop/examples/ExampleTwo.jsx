@@ -9,7 +9,7 @@ const TooltipContainer = ({ children, left, top }) => {
       className="Tooltip"
       style={{
         left,
-        top
+        top,
       }}
     >
       <div className="Tooltip-container">{children}</div>
@@ -22,12 +22,12 @@ const Tooltip = ({ children, renderContent }) => {
   const [leftPosition, setLeftPosition] = useState(0);
   const [topPosition, setTopPosition] = useState(0);
 
-  const clonedChildren = React.Children.map(children, (child) => {
+  const clonedChildren = React.Children.map(children, child => {
     const ref = useRef();
     return React.cloneElement(child, {
       ref,
       className: classnames(child.props.className, 'Tooltip-trigger'),
-      onMouseEnter: (e) => {
+      onMouseEnter: e => {
         setHovered(true);
         const { x, y, width, height } = ref.current.getBoundingClientRect();
         const rightPosition = x + width;
@@ -37,7 +37,7 @@ const Tooltip = ({ children, renderContent }) => {
       },
       onMouseLeave: () => {
         setHovered(false);
-      }
+      },
     });
   });
 

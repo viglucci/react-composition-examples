@@ -22,7 +22,7 @@
 }
 
 .Tooltip-container::after {
-  content: " ";
+  content: ' ';
   position: absolute;
   top: 50%;
   right: 100%; /* To the left of the tooltip */
