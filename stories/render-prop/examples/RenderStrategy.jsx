@@ -23,7 +23,7 @@ export default () => {
   const renderItem = ({ value }, index) => {
     return (
       <li className="list-group-item" key={index}>
-        {value}
+        Index {index} - {value}
       </li>
     );
   };
